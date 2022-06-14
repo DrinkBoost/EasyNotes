@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark" id="nav">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#" style="color:aliceblue ;">EasyNotes</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-1">
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+ 
+     
+        <!-- transcript -->
+        <div class="col" id="transcript">
+          <div class="title_column">
+            <!-- <p class="fw-bold" id="title_column">Transcript...</p> -->
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-dark" type="button" id="buttonAi">Click here to start real time transcription...</button>
+          </div>
+            <label>
+                TEDx is a grassroots initiative, created in the spirit of TED’s overall mission to research and discover “ideas worth spreading.” TEDx brings the spirit of TED to local communities around the globe through TEDx events. These events are organized by passionate individuals who seek to uncover new ideas and to share the latest research in their local areas that spark conversations in their communities. TEDx events include live speakers and recorded TED Talks, and are organized independently under a free license granted by TED. These events are not controlled by TED, but event organizers agree to abide by our format, and are offered guidelines for curation, speaker coaching, event organizing and more. They learn from us and from each other. More than 3000 events are now held annually.
+            </label>
+            <div>
+              Test
+              <p id="messageAi">ciao sono marco.come stai.</p>
+            </div>
+        </div>
+      
+        <div class="row">
+            <!-- mytext -->
+                <div class="col-8" id="myText">
+                  <div class="title_column">
+                    <!-- <p class="fw-bold" id="notes">EasyNotes...</p> -->
+                  </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="myText" rows="35" oninput="changedText()" placeholder="Write here your notes.."></textarea>
+                    </div>
+                </div>
+            <div class="col">
+                <!-- suggerimenti -->
+                <ul class="list-group" id="suggestion">
+                  <div class="title_column">
+                    <!-- <p class="fw-bold" id="sugg">Suggestion...</p> -->
+                  </div>
+                 
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TEDx is a grassroots initiativ
+                        <div class="sugg_button">
+                          <i class="bi bi-check-square-fill"  id="accept"></i>
+                          <i class="bi bi-trash3-fill" id="trash"></i>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      A second list item
+                      
+                        <div class="sugg_button">
+                          <i class="bi bi-check-square-fill" id="accept"></i>
+                          <i class="bi bi-trash3-fill" id="trash"></i>
+                        </div>
+                      
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      A third list item
+                      <div class="sugg_button">
+                        <i class="bi bi-check-square-fill" id="accept"></i>
+                        <i class="bi bi-trash3-fill" id="trash"></i>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      A third list item
+                      <div class="sugg_button">
+                        <i class="bi bi-check-square-fill" id="accept"></i>
+                        <i class="bi bi-trash3-fill" id="trash"></i>
+                      </div>
+                    </li>
+                    <!-- suggestion -->
+                  </ul>
+            </div>
+        </div>
+   
+    <script src="./js/index.js"></script>
+</body>
+</html>

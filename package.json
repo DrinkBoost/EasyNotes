@@ -1,0 +1,24 @@
+{
+  "name": "audio-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./js/server.js",
+    "client": "serve -l 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap-icons": "^1.8.3",
+    "cors": "^2.8.5",
+    "css.gg": "^2.0.0",
+    "express": "^4.17.1",
+    "serve": "^12.0.1",
+    "string-similarity": "^4.0.4",
+    "string-similarity-js": "^2.1.4"
+  }
+}
