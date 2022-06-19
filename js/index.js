@@ -1,16 +1,11 @@
 // required dom elements
 const buttonEl = document.getElementById('buttonAi');
 const messageEl = document.getElementById('messageAi');
-//const titleEl = document.getElementById('real-time-title');
-const myText = document.getElementById('myText');
-const suggestion = document.getElementById('suggestion');
 
 // set initial state of application variables
-//messageEl.style.display = 'none';
 let isRecording = false;
 let socket;
 let recorder;
-let totalText="";
 
 // runs real-time transcription and handles global variables
 const run = async () => {
@@ -43,6 +38,7 @@ const run = async () => {
     socket.onmessage = (message) => {
       let msg = '';
       const res = JSON.parse(message.data);
+      console.log(res);
       texts[res.audio_start] = res.text;
       const keys = Object.keys(texts);
       keys.sort((a, b) => a - b);
@@ -52,7 +48,7 @@ const run = async () => {
         }
       }
       messageEl.innerText = msg;
-      
+      changedText();
     };
 
     socket.onerror = (event) => {
@@ -100,124 +96,7 @@ const run = async () => {
   }
 
   isRecording = !isRecording;
-  buttonEl.innerText = isRecording ? 'Stop' : 'Click here to start real time transcription...';
-  //titleEl.innerText = isRecording ? 'Click stop to end recording!' : 'Click start to begin recording!'
+  buttonEl.innerText = isRecording ? 'Stop real time transcription...' : 'Click here to start real time transcription...';
 };
 
 buttonEl.addEventListener('click', () => run());
-
-
-function changedText()
-{
-  
-  let aiTextList = messageEl.innerText.split('.');
-  console.log("message ai:"+aiTextList);
-  const textAreaValue= document.getElementById("myText").value;
-
-  
-  let arrLen = textAreaValue.split('.').length;
-  console.log(arrLen);
-  console.log(stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList));
-  //suggestion.innerText=stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList)['bestMatch']['target'];
-  if(stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList)['bestMatch']['rating']>0.6){
-    if(stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList)['bestMatch']['target']!="")
-    {
-      let id=stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList)['bestMatch']['target'];
-      let dw = document.getElementById(id);
-      console.log("dw:"+dw);
-      if (dw == null)
-      {
-          
-        const nodeli= document.createElement("li");
-        nodeli.className="list-group-item d-flex justify-content-between align-items-center";
-        nodeli.id=stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList)['bestMatch']['target'];
-        
-        // Create a text node:
-        const textnode = document.createTextNode(stringSimilarity.findBestMatch(textAreaValue.split(".")[arrLen -1],aiTextList)['bestMatch']['target']);
-        
-        // Append the text node to the "li" node:
-        nodeli.appendChild(textnode);
-        
-        const nodediv= document.createElement("div");
-        nodediv.className="sugg_button";
-        const nodeIcon1 = document.createElement("i");
-        
-        nodeIcon1.className="bi bi-check-square-fill" ;
-        nodeIcon1.id="accept";
-        //nodeIcon1.ondblclick=suggestAccept(this);
-        
-        const nodeIcon2 = document.createElement("i");
-        nodeIcon2.id="trash";
-        nodeIcon2.className="bi bi-trash3-fill";
-        nodeIcon2.style="margin: 5px;"
-        
-        nodediv.appendChild(nodeIcon1);
-        nodediv.appendChild(nodeIcon2);
-        nodeli.appendChild(nodediv);
-
-        
-
-
-
-        // Append the "li" node to the list:
-        document.getElementById("suggestion").appendChild(nodeli);
-        
-
-
-        
-      }
-      else
-      {
-        console.log("non messo");
-        return;
-      }
-
-    }
-  }
-  
-}
-
-function cancelSugg()
-{
-  // suggestion.innerHTML="";
-}
-
-function suggestAccept(add){
-  
-  let sugg=add.innerText;
-  alert(sugg);
-  if(sugg==null)
-    return;
-  console.log(sugg);
-  let textAreaValue= document.getElementById("myText").value.split(".");
-  
-  let r = stringSimilarity.findBestMatch(sugg,textAreaValue)['bestMatch']['target'];
-
-  if(stringSimilarity.findBestMatch(sugg,textAreaValue)['bestMatch']['rating']<0.6)
-  {
-    return;
-  }
-
-
-  let a = "";
-
-
-  for (let i = 0; i < textAreaValue.length; i++) {
-    let element = textAreaValue[i];
-    if(element==r){
-      
-      a = a+"\n"+sugg;
-
-    }
-    else{
-      a = a+"\n"+element;
-
-    }
-    console.log(a);
-    document.getElementById("myText").value=a;
-    
-  };
-
-
-}
-

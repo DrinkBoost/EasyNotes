@@ -1,6 +1,13 @@
-.container{
-   
+.aiText p{
+    display: inline;
 }
+
+#bestMatch{
+    color: red;
+    font-weight: bold;
+    
+}
+
 #nav{
     height: 70px;
     background-color: aliceblue;
@@ -57,11 +64,15 @@
 
 
 #buttonAi{
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     background-color: rgb(218, 50, 75);
     border-style: none;
     color: aliceblue;
     border-color: red;
+}
+
+.row{
+    padding-top: 30px;
 }
 
 

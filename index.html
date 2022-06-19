@@ -29,79 +29,44 @@
             </form>
           </div>
         </div>
-      </nav>
+    </nav>
       
  
      
-        <!-- transcript -->
-        <div class="col" id="transcript">
-          <div class="title_column">
-            <!-- <p class="fw-bold" id="title_column">Transcript...</p> -->
-          </div>
-          <div class="d-grid gap-2">
-            <button class="btn btn-outline-dark" type="button" id="buttonAi">Click here to start real time transcription...</button>
-          </div>
-            <label>
-                TEDx is a grassroots initiative, created in the spirit of TED’s overall mission to research and discover “ideas worth spreading.” TEDx brings the spirit of TED to local communities around the globe through TEDx events. These events are organized by passionate individuals who seek to uncover new ideas and to share the latest research in their local areas that spark conversations in their communities. TEDx events include live speakers and recorded TED Talks, and are organized independently under a free license granted by TED. These events are not controlled by TED, but event organizers agree to abide by our format, and are offered guidelines for curation, speaker coaching, event organizing and more. They learn from us and from each other. More than 3000 events are now held annually.
-            </label>
-            <div>
-              Test
-              <p id="messageAi">ciao sono marco.come stai.</p>
-            </div>
-        </div>
+       
       
         <div class="row">
+          <!-- transcript -->
+          <div class="col" id="transcript">
+            <div class="title_column">
+              <!-- <p class="fw-bold" id="title_column">Transcript...</p> -->
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-dark" type="button" id="buttonAi">Click here to start real time transcription...</button>
+            </div>
+              <!-- <label>
+                  TEDx is a grassroots initiative, created in the spirit of TED’s overall mission to research and discover “ideas worth spreading.” TEDx brings the spirit of TED to local communities around the globe through TEDx events. These events are organized by passionate individuals who seek to uncover new ideas and to share the latest research in their local areas that spark conversations in their communities. TEDx events include live speakers and recorded TED Talks, and are organized independently under a free license granted by TED. These events are not controlled by TED, but event organizers agree to abide by our format, and are offered guidelines for curation, speaker coaching, event organizing and more. They learn from us and from each other. More than 3000 events are now held annually.
+              </label> -->
+              <div class="aiText">
+                Test
+                <p id="messageAi" onload="alert('ciao')">L’autore rievoca, commosso, la figura di Napoleone, che tanto lo attrae, partendo dal momento della sua morte: questo evento provoca un grande sgomento poiché Napoleone ha retto le sorti di un’intera epoca e di un intero continente. Non resta che il silenzio, la terra è attonita, è presto per dire se quella di Napoleone fu una vita gloriosa o meno ma è certo che la sua fu un’esistenza caratterizzata da imprese leggendarie che lasciarono il mondo sbigottito.   
+                </p>
+              </div>
+          </div>
+
             <!-- mytext -->
-                <div class="col-8" id="myText">
-                  <div class="title_column">
-                    <!-- <p class="fw-bold" id="notes">EasyNotes...</p> -->
+                <div class="col">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark" type="button" id="buttonAi">Take your notes!</button>
                   </div>
                     <div class="mb-3">
-                        <textarea class="form-control" id="myText" rows="35" oninput="changedText()" placeholder="Write here your notes.."></textarea>
+                        <textarea class="form-control" id="myText" rows="30" oninput="changedText()" placeholder="Write here your notes.."></textarea>
                     </div>
                 </div>
-            <div class="col">
-                <!-- suggerimenti -->
-                <ul class="list-group" id="suggestion">
-                  <div class="title_column">
-                    <!-- <p class="fw-bold" id="sugg">Suggestion...</p> -->
-                  </div>
-                 
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        TEDx is a grassroots initiativ
-                        <div class="sugg_button">
-                          <i class="bi bi-check-square-fill"  id="accept"></i>
-                          <i class="bi bi-trash3-fill" id="trash"></i>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      A second list item
-                      
-                        <div class="sugg_button">
-                          <i class="bi bi-check-square-fill" id="accept"></i>
-                          <i class="bi bi-trash3-fill" id="trash"></i>
-                        </div>
-                      
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      A third list item
-                      <div class="sugg_button">
-                        <i class="bi bi-check-square-fill" id="accept"></i>
-                        <i class="bi bi-trash3-fill" id="trash"></i>
-                      </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      A third list item
-                      <div class="sugg_button">
-                        <i class="bi bi-check-square-fill" id="accept"></i>
-                        <i class="bi bi-trash3-fill" id="trash"></i>
-                      </div>
-                    </li>
-                    <!-- suggestion -->
-                  </ul>
-            </div>
+                
         </div>
    
     <script src="./js/index.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
