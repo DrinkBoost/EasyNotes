@@ -12,7 +12,7 @@
     <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
-<body>
+<body onload="startTas()">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-dark" id="nav">
         <div class="container-fluid">
@@ -21,6 +21,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="#" style="color:aliceblue ;">EasyNotes</a>
+              <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-EasyNotes" onchange="getValue()">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+            </div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-1">
             </ul>
             <form class="d-flex" role="search">
@@ -60,7 +64,7 @@
                     <button class="btn btn-outline-dark" type="button" id="buttonAi">Take your notes!</button>
                   </div>
                     <div class="mb-3">
-                        <textarea class="form-control" id="myText" rows="30" oninput="changedText()" placeholder="Write here your notes.."></textarea>
+                        <textarea class="form-control" id="myText" rows="30"  oninput="saveDataTas()" placeholder="Write here your notes.."></textarea>
                     </div>
                 </div>
                 

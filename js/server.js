@@ -10,7 +10,7 @@ app.get('/', async (req, res) => {
   try {
     const response = await axios.post('https://api.assemblyai.com/v2/realtime/token', // use account token to get a temp user token
       { expires_in: 3600 }, // can set a TTL timer in seconds.
-      { headers: { authorization: "" } }); // AssemblyAI API Key goes here
+      { headers: { authorization: "02869a86b1794904aeaff49d8c018c73" } }); // AssemblyAI API Key goes here
     const { data } = response;
     res.json(data);
   } catch (error) {

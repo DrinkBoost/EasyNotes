@@ -9,7 +9,7 @@ let recorder;
 
 // runs real-time transcription and handles global variables
 const run = async () => {
-  if (isRecording) { 
+  if (isRecording) {
     if (socket) {
       socket.send(JSON.stringify({terminate_session: true}));
       socket.close();
@@ -38,7 +38,9 @@ const run = async () => {
     socket.onmessage = (message) => {
       let msg = '';
       const res = JSON.parse(message.data);
-      console.log(res);
+      //console.log(res["words"]);
+      getMicInput(res["words"])
+
       texts[res.audio_start] = res.text;
       const keys = Object.keys(texts);
       keys.sort((a, b) => a - b);
@@ -48,7 +50,7 @@ const run = async () => {
         }
       }
       messageEl.innerText = msg;
-      changedText();
+
     };
 
     socket.onerror = (event) => {
